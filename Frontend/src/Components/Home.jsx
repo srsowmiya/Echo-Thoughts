@@ -1,49 +1,60 @@
 import React from 'react'
-import { useState } from 'react';
+import Navbar from './Navbar'
+import HomeImage from '../assets/Home.webp'
+import image from '../assets/image1.jpg'
 
 const Home = () => {
- const [isRecording, setIsRecording] = useState(false);
+  return(
+    <div className="min-h-screen bg-[#FFF5F7] overflow-x-hidden">
+      <Navbar />
 
-  return (
-    <div className="bg-slate-950 p-12 rounded-[3rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] text-center w-full max-w-md border border-white/5">
-      <h2 className="text-white text-xs font-black uppercase tracking-[0.4em] mb-12 opacity-50">
-        {isRecording ? "Recording Thought..." : "Ready to Echo"}
-      </h2>
+      {/* Hero Section Container */}
+      <main className="max-w-7xl mx-auto px-8 pt-64 lg:pt-80">
+        
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          {/* LEFT SIDE: Centered Image Mockup */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div className="relative">
+              {/* Soft glow behind the image to separate it from the background */}
+              <div className="absolute -inset-10 bg-[#F57799]/10 rounded-full blur-[100px] -z-10"></div>
+              
+              <div className="relative w-full max-w-[450px] aspect-[4/5] overflow-hidden rounded-[3rem] border-[12px] border-white shadow-2xl">
+                <img 
+                  src={image} 
+                  alt="Journaling Experience" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-      <div className="relative flex justify-center items-center">
-        {/* The Animated Glow Rings (Only visible when recording) */}
-        {isRecording && (
-          <>
-            <div className="absolute w-32 h-32 bg-[#FA8112]/30 rounded-full animate-ping"></div>
-            <div className="absolute w-40 h-40 bg-[#FA8112]/10 rounded-full animate-pulse"></div>
-          </>
-        )}
+          {/* RIGHT SIDE: Styled Content */}
+          <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left pb-20">
+            <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-[0.85] tracking-tighter uppercase">
+              Your <br/>
+              <span className="text-[#F57799]">Digital</span> <br/>
+              Mirror.
+            </h2>
+            
+            <p className="text-lg font-bold text-slate-500 max-w-sm mx-auto lg:mx-0 leading-relaxed">
+              Echo-Thoughts turns your voice into a visual journey. Experience journaling that speaks back.
+            </p>
 
-        {/* The Main Trigger Button */}
-        <button 
-          onClick={() => setIsRecording(!isRecording)}
-          className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl ${
-            isRecording 
-            ? 'bg-white scale-90' 
-            : 'bg-[#FA8112] hover:scale-110 active:scale-95'
-          }`}
-        >
-          {isRecording ? (
-            <div className="w-8 h-8 bg-[#FA8112] rounded-sm"></div> // Stop Icon
-          ) : (
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
-            </svg>
-          )}
-        </button>
-      </div>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+              <button className="bg-[#1A1A1A] text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                Start Now
+              </button>
+              <button className="border-4 border-[#1A1A1A] text-[#1A1A1A] px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-[#1A1A1A] hover:text-white transition-all">
+                About Us
+              </button>
+            </div>
+          </div>
 
-      <div className="mt-12 text-[#FA8112] font-mono text-sm tracking-widest">
-        00:00:00
-      </div>
+        </div>
+      </main>
     </div>
-  );
+  )
 }
 
 export default Home

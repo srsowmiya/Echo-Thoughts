@@ -1,7 +1,7 @@
 import React from 'react'
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50">
+    <nav className="absolute top-0 w-full z-50">
 
       <div 
         className="bg-[#F57799] pt-10 pb-40 px-12 shadow-2xl"
