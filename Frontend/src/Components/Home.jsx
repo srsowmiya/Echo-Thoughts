@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import image from '../assets/image1.jpg'
 import Features from './Features'
+import Footer from './Footer'
 
 const Home = () => {
   return(
@@ -54,6 +55,7 @@ const Home = () => {
         </div>
       </main>
       <Features/>
+      <Footer/>
     </div>
   )
 }
