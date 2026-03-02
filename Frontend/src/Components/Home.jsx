@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
-import HomeImage from '../assets/Home.webp'
 import image from '../assets/image1.jpg'
+import Features from './Features'
 
 const Home = () => {
   return(
@@ -53,6 +53,7 @@ const Home = () => {
 
         </div>
       </main>
+      <Features/>
     </div>
   )
 }
