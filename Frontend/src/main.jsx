@@ -3,9 +3,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './Components/Home'
+import Signup from './Components/Signup'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Home />
+    <Signup />
   </StrictMode>,
 )
