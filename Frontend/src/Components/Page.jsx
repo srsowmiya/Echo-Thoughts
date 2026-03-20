@@ -3,11 +3,11 @@ import { Sparkles, Send } from 'lucide-react';
 
 const Page = () => {
   const [thoughts, setThoughts] = useState("");
-  const [currentDate,SetCurrentDate]=useState();
+  const [currentDate,setCurrentDate]=useState(new Date());
 
   useEffect(() => {
   const date = new Date();
-  SetCurrentDate(date); 
+  setCurrentDate(date); 
 }, []);
 
   return (
