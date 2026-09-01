@@ -9,6 +9,6 @@ import Page from './Components/Page'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Page />
+    <Page/>
   </StrictMode>,
 )
